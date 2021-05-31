@@ -41,7 +41,7 @@ describe('Login tests', async () => {
         const loginPage = new LoginPage(page)
         const productsPage = new ProductsPage(page)
 
-        await page.goto(loginPageURL)
+        await loginPage.navigateTo()
         await loginPage.setUserName(userData.standardUser)
         await loginPage.setPassword(userData.password)
         await loginPage.clickLoginButton()
