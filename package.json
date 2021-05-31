@@ -1,0 +1,15 @@
+{
+  "name": "playwright-learning",
+  "version": "1.0.0",
+  "description": "plawright learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^0.1111.0",
+    "playwright": "^1.11.1"
+  }
+}

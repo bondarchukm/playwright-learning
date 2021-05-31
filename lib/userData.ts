@@ -1,0 +1,5 @@
+export const userData = {
+    standardUser: 'standard_user',
+    lockedOutUser: 'locked_out_user',
+    password: 'secret_sauce'
+}
