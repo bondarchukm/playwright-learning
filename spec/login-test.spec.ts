@@ -11,7 +11,7 @@ let page: Page
 
 beforeAll(async () => {
     browser = await chromium.launch({
-        headless: true,
+        headless: false,
     })
 })
 beforeEach(async () => {
@@ -23,6 +23,7 @@ afterAll(async () => {
 })
 afterEach(async () => {
     await page.close()
+    await context.close()
 })
 
 test('Should login successfully with valid credentials', async () => {
