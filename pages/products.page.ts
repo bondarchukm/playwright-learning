@@ -11,9 +11,7 @@ export class ProductsPage {
 
     // Locators' methods
     async getPageTitleText(): Promise<string> {
-        const text = await this.Page.$eval('.title', (el) =>
-            el.textContent.trim()
-        )
+        const text = await (await this.pageTitle()).innerText()
         return text
     }
 }
