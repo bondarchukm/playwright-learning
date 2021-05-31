@@ -4,12 +4,20 @@
   "description": "plawright learning",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
+  "jest": {
+    "preset": "jest-playwright-preset"
+  },
   "devDependencies": {
     "@playwright/test": "^0.1111.0",
-    "playwright": "^1.11.1"
+    "@types/jest": "^26.0.23",
+    "jest": "^27.0.3",
+    "jest-playwright-preset": "^1.6.0",
+    "playwright": "^1.11.1",
+    "ts-jest": "^27.0.2",
+    "typescript": "^4.3.2"
   }
 }
