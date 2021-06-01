@@ -1,12 +1,13 @@
-import {
-    it,
-    describe,
-    expect,
-    beforeAll,
-    afterAll,
-    beforeEach,
-    afterEach,
-} from '@playwright/test'
+import {it, expect} from '../folio/fixture'
+// import {
+//     it,
+//     describe,
+//     expect,
+//     beforeAll,
+//     afterAll,
+//     beforeEach,
+//     afterEach,
+// } from '@playwright/test'
 import { LoginPage } from '../pages/login.page'
 import { userData } from '../lib/userData'
 import { Browser, BrowserContext, chromium, Page } from 'playwright'
@@ -18,7 +19,6 @@ let browser: Browser
 let page: Page
 let context: BrowserContext
 
-describe('Login tests', async () => {
     // beforeAll(async () => {
     //     browser = await chromium.launch()
     // })
@@ -48,4 +48,4 @@ describe('Login tests', async () => {
 
         expect(await productsPage.getPageTitleText()).toEqual(productsPageTitle)
     })
-})
+
