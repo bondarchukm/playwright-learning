@@ -3,14 +3,14 @@ import { productsPageURL } from '../lib/urls'
 import { Base } from './base.page'
 
 export class ProductsPage extends Base{
-    Page: Page
+    page: Page
 
     constructor(page: Page) {
         super(productsPageURL)
-        this.Page = page
+        this.page = page
     }
     // UI Locators
-    pageTitle = async () => this.Page.$('.title')
+    pageTitle = async () => this.page.$('.title')
 
     // Locators' methods
     async getPageTitleText(): Promise<string> {

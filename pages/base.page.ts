@@ -1,7 +1,7 @@
 import { Page } from 'playwright'
 
 export class Base {
-    Page: Page
+    page: Page
     private url: string
 
     constructor(URL: string) {
@@ -9,6 +9,6 @@ export class Base {
     }
 
     async navigateTo(): Promise<void>{
-        await this.Page.goto(this.url)
+        await this.page.goto(this.url)
     }
 }

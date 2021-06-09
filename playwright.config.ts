@@ -1,9 +1,10 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test'
 
 const config: PlaywrightTestConfig = {
-    workers: 1,
+    // workers: 1,
     testDir: 'spec',
     retries: 2,
+    reporter: 'dot',
 
     use: {
         launchOptions: {
@@ -11,7 +12,7 @@ const config: PlaywrightTestConfig = {
         },
 
         // Browser options
-        headless: false,
+        headless: true,
 
         // Context options
         viewport: { width: 1280, height: 720 },

@@ -3,16 +3,16 @@ import { Base } from '../pages/base.page'
 import { loginPageURL } from '../lib/urls'
 
 export class LoginPage extends Base {
-    Page: Page
+    page: Page
 
     constructor(page: Page) {
         super(loginPageURL)
-        this.Page = page
+        this.page = page
     }
     // UI Locators
-    userNameInput = async () => this.Page.$('#user-name')
-    passwordInput = async () => this.Page.$('#password')
-    loginButton = async () => this.Page.$('#login-button')
+    userNameInput = async () => this.page.$('#user-name')
+    passwordInput = async () => this.page.$('#password')
+    loginButton = async () => this.page.$('#login-button')
 
     // Locators' methods
     async setUserName(name: string): Promise<void> {

@@ -1,13 +1,13 @@
 import { Page } from 'playwright'
 
 export class HeaderPage {
-    Page: Page
+    page: Page
 
     constructor(page: Page) {
-        this.Page = page
+        this.page = page
     }
     // UI Locators
-    menuButton = async () => this.Page.$('#react-burger-menu-btn')
+    menuButton = async () => this.page.$('#react-burger-menu-btn')
 
     // Locators' methods
     async clickMenuButton(): Promise<void> {

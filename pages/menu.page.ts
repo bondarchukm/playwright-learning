@@ -1,13 +1,13 @@
 import { Page } from 'playwright'
 
 export class MenuPage {
-    Page: Page
+    page: Page
 
     constructor(page: Page) {
-        this.Page = page
+        this.page = page
     }
     // UI Locators
-    logoutButton = async () => this.Page.$('#logout_sidebar_link')
+    logoutButton = async () => this.page.$('#logout_sidebar_link')
 
     // Locators' methods
     async clickLogoutButton(): Promise<void> {
