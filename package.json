@@ -4,12 +4,12 @@
   "description": "plawright learning",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx playwright test"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^0.1111.0",
-    "playwright": "^1.11.1"
+    "@playwright/test": "^1.12.0",
+    "playwright": "^1.12.0"
   }
 }

@@ -1,51 +1,41 @@
-import {
-    it,
-    describe,
-    expect,
-    beforeAll,
-    afterAll,
-    beforeEach,
-    afterEach,
-} from '@playwright/test'
+import { test, expect } from '@playwright/test'
 import { LoginPage } from '../pages/login.page'
 import { userData } from '../lib/userData'
-import { Browser, BrowserContext, chromium, Page } from 'playwright'
 import { ProductsPage } from '../pages/products.page'
 import { productsPageTitle } from '../lib/pageTitles'
-import { loginPageURL } from '../lib/urls'
+import { HeaderPage } from '../pages/header.page'
+import { MenuPage } from '../pages/menu.page'
 
-let browser: Browser
-let page: Page
-let context: BrowserContext
+test.describe('Login tests', async () => {
+    test.beforeEach(async ({ page }) => {
+        const loginPage = new LoginPage(page)
+        await loginPage.navigateTo()
+    })
 
-describe('Login tests', async () => {
-    // beforeAll(async () => {
-    //     browser = await chromium.launch()
-    // })
-    // beforeEach(async () => {
-    //     context = await browser.newContext()
-    //     page = await context.newPage()
-    // })
-    // afterAll(async () => {
-    //     await browser.close()
-    // })
-    // afterEach(async () => {
-    //     await page.close()
-    // })
-
-    it('Should login successfully with valid credentials', async ({
-        context,
+    test('Should login successfully with valid credentials', async ({
+        page,
     }) => {
-        const page = await context.newPage()
-
         const loginPage = new LoginPage(page)
         const productsPage = new ProductsPage(page)
 
-        await loginPage.navigateTo()
+        // await loginPage.navigateTo()
         await loginPage.setUserName(userData.standardUser)
         await loginPage.setPassword(userData.password)
         await loginPage.clickLoginButton()
 
         expect(await productsPage.getPageTitleText()).toEqual(productsPageTitle)
+    })
+
+    test('Should logout successfully', async ({ page }) => {
+        const loginPage = new LoginPage(page)
+        const header = new HeaderPage(page)
+        const menu = new MenuPage(page)
+
+        // await loginPage.navigateTo()
+        await loginPage.loginToApp(userData.standardUser, userData.password)
+        await header.clickMenuButton()
+        await menu.clickLogoutButton()
+
+        expect(loginPage.userNameInput).toBeTruthy()
     })
 })

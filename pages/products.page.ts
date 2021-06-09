@@ -1,9 +1,12 @@
 import { Page } from 'playwright'
+import { productsPageURL } from '../lib/urls'
+import { Base } from './base.page'
 
-export class ProductsPage {
+export class ProductsPage extends Base{
     Page: Page
 
     constructor(page: Page) {
+        super(productsPageURL)
         this.Page = page
     }
     // UI Locators
