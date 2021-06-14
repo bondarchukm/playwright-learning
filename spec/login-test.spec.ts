@@ -11,7 +11,7 @@ test.describe('Login tests', async () => {
         const loginPage = new LoginPage(page)
         await loginPage.navigateTo()
     })
-
+    
     test('Should login successfully with valid credentials', async ({
         page,
     }) => {
